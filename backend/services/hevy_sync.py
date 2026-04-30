@@ -1,6 +1,6 @@
 import requests
 import os
-from ingestion import get_connection
+from backend.services.ingestion import get_connection
 from dotenv import load_dotenv
 
 

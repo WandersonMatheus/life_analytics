@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Request, BackgroundTasks
-from services.hevy_sync import handle_hevy_workout
+from backend.services.hevy_sync import handle_hevy_workout
 
 router = APIRouter()
 
@@ -9,7 +9,7 @@ async def hevy_webhook(request: Request, background_tasks: BackgroundTasks):
     payload = await request.json()
 
     workout_id = payload.get("workoutId")
-
+ 
     if not workout_id:
         return {"status": "ignored"}
 
